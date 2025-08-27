@@ -1,26 +1,25 @@
 class Solution {
+    private int value(char c){
+        switch(c){
+            case 'I': return 1;
+            case 'V': return 5;
+            case 'X': return 10;
+            case 'L': return 50;
+            case 'C': return 100;
+            case 'D': return 500;
+            case 'M': return 1000;
+            default: return 0;
+        }
+    }
     public int romanToInt(String s) {
-        Map<Character,Integer> romanMap= new HashMap<>();
-        romanMap.put('I',1);
-        romanMap.put('V',5);
-        romanMap.put('X',10);
-        romanMap.put('L',50);
-        romanMap.put('C',100);
-        romanMap.put('D',500);
-        romanMap.put('M',1000);
 
         int total=0;
 
         for(int i=0; i < s.length(); i++){
-            int currentVal=romanMap.get(s.charAt(i));
-            if(i+1 < s.length()){
-                int nextVal=romanMap.get(s.charAt(i+1));
-                if(currentVal<nextVal){
+            int currentVal=value(s.charAt(i));
+            if(i+1 < s.length() && currentVal < value(s.charAt(i+1))){
                     total-=currentVal;
-                }
-                else{
-                    total+=currentVal;
-                }
+                
             }
             else{
                 total+=currentVal;
