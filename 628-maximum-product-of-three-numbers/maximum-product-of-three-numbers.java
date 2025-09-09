@@ -28,9 +28,8 @@ class Solution {
                 min2 = n;
             }
         }
-        long option1 = max1 * max2 * max3;   
-        long option2 = min1 * min2 * max1;
-        long result = Math.max(option1, option2);
-        return (int) result;
+        long product1 = 1L*max1 * max2 * max3;   
+        long product2 = 1L*min1 * min2 * max1;
+        return (int) (product1 > product2 ? product1 : product2);
     }
 }
