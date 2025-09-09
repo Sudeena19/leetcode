@@ -3,10 +3,10 @@ class Solution {
         if(nums.length==3){
             return nums[0]*nums[1]*nums[2];
         }
-        long max1 = Long.MIN_VALUE, max2 = Long.MIN_VALUE, max3 = Long.MIN_VALUE;
-        long min1 = Long.MAX_VALUE, min2 = Long.MAX_VALUE;
-        for(int v : nums){
-            long n=v;
+        int min1 = Integer.MAX_VALUE, min2 = Integer.MAX_VALUE;
+        int max1 = Integer.MIN_VALUE, max2 = Integer.MIN_VALUE, max3 = Integer.MIN_VALUE;
+        for(int n : nums){
+            //long n=v;
             if(n>max1){
                 max3=max2;
                 max2=max1;
